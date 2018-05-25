@@ -14,6 +14,38 @@ public class UserEntity {
 
 	@Persistent
 	String name;
+	@Persistent
+	int karma;
+	@Persistent
+	String login;
+	@Persistent
+	String passwd;
+	@Persistent
+	String mail;
+	
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPasswd() {
+		return passwd;
+	}
+
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
 
 	public Long getId() {
 		return id;
@@ -39,6 +71,5 @@ public class UserEntity {
 		this.karma = karma;
 	}
 
-	@Persistent
-	int karma;
+
 }

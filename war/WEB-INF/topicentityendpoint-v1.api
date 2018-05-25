@@ -27,31 +27,6 @@
   "ownerName" : "mycompany.com",
   "packagePath" : "services",
   "methods" : {
-    "topicentityendpoint.listTopicEntity" : {
-      "path" : "topicentity",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "endPoint.TopicEntityEndpoint.listTopicEntity",
-      "request" : {
-        "parameters" : {
-          "cursor" : {
-            "type" : "string",
-            "required" : false
-          },
-          "limit" : {
-            "type" : "int32",
-            "required" : false
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "topicentityendpoint.getTopicEntity" : {
       "path" : "topicentity/{id}",
       "httpMethod" : "GET",
@@ -73,17 +48,26 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "topicentityendpoint.insertTopicEntity" : {
+    "topicentityendpoint.listTopicEntity" : {
       "path" : "topicentity",
-      "httpMethod" : "POST",
+      "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "endPoint.TopicEntityEndpoint.insertTopicEntity",
+      "rosyMethod" : "endPoint.TopicEntityEndpoint.listTopicEntity",
       "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
@@ -125,25 +109,26 @@
       "response" : {
         "body" : "empty"
       }
+    },
+    "topicentityendpoint.insertTopicEntity" : {
+      "path" : "topicentity",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "endPoint.TopicEntityEndpoint.insertTopicEntity",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
     }
   },
   "descriptor" : {
     "schemas" : {
-      "CollectionResponse_TopicEntity" : {
-        "id" : "CollectionResponse_TopicEntity",
-        "type" : "object",
-        "properties" : {
-          "items" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "TopicEntity"
-            }
-          },
-          "nextPageToken" : {
-            "type" : "string"
-          }
-        }
-      },
       "TopicEntity" : {
         "id" : "TopicEntity",
         "type" : "object",
@@ -174,25 +159,32 @@
             "type" : "string"
           }
         }
+      },
+      "CollectionResponse_TopicEntity" : {
+        "id" : "CollectionResponse_TopicEntity",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "TopicEntity"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
       }
     },
     "methods" : {
-      "endPoint.TopicEntityEndpoint.listTopicEntity" : {
-        "response" : {
-          "$ref" : "CollectionResponse_TopicEntity"
-        }
-      },
       "endPoint.TopicEntityEndpoint.getTopicEntity" : {
         "response" : {
           "$ref" : "TopicEntity"
         }
       },
-      "endPoint.TopicEntityEndpoint.insertTopicEntity" : {
-        "request" : {
-          "$ref" : "TopicEntity"
-        },
+      "endPoint.TopicEntityEndpoint.listTopicEntity" : {
         "response" : {
-          "$ref" : "TopicEntity"
+          "$ref" : "CollectionResponse_TopicEntity"
         }
       },
       "endPoint.TopicEntityEndpoint.updateTopicEntity" : {
@@ -204,6 +196,14 @@
         }
       },
       "endPoint.TopicEntityEndpoint.removeTopicEntity" : {
+      },
+      "endPoint.TopicEntityEndpoint.insertTopicEntity" : {
+        "request" : {
+          "$ref" : "TopicEntity"
+        },
+        "response" : {
+          "$ref" : "TopicEntity"
+        }
       }
     }
   }
