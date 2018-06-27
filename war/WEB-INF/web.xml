@@ -1,17 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<welcome-file-list>
+		<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
   <servlet>
 	    <servlet-name>AuthentificationServlet</servlet-name>
-	    <servlet-class>service.AuthentificationServlet</servlet-class>
-	     <servlet-mapping>
-	       <servlet-name>AuthentificationServlet</servlet-name>
-	       <url-pattern>/auth</url-pattern>
-	    </servlet-mapping>
+	    <servlet-class>service.AuthentificationServlet</servlet-class> 
   </servlet>
+  <servlet-mapping>
+        <servlet-name>AuthentificationServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	    <servlet-name>TopicsGenerationServlet</servlet-name>
+	    <servlet-class>service.TopicsGenerationServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>TopicsGenerationServlet</servlet-name>
+        <url-pattern>/topicsgeneration</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+	    <servlet-name>UsersGenerationServlet</servlet-name>
+	    <servlet-class>service.UsersGenerationServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>UsersGenerationServlet</servlet-name>
+        <url-pattern>/usersgeneration</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	    <servlet-name>GetTopTopicsServlet</servlet-name>
+	    <servlet-class>service.GetTopTopicsServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>GetTopTopicsServlet</servlet-name>
+        <url-pattern>/top10</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+	    <servlet-name>UpvoteServlet</servlet-name>
+	    <servlet-class>service.UpvoteServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>UpvoteServlet</servlet-name>
+        <url-pattern>/upvote</url-pattern>
+  </servlet-mapping>
 	
   <servlet>
     <servlet-name>SystemServiceServlet</servlet-name>
