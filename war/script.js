@@ -72,7 +72,7 @@ var app = angular.module('redditHomePage', []).controller('HsController', ['$sco
     $window.init = function() {
       console.log("windowinit called");
       var rootApi = 'https://cloudtest1-194515.appspot.com/_ah/api/';
-      gapi.client.load('topicentityendpoint', 'v1', function() {
+      gapi.client.load('topicendpoint', 'v1', function() {
         console.log("topic api loaded");
         $scope.listTopic();
       }, rootApi);

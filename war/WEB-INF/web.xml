@@ -4,6 +4,24 @@
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
+	
+	  <servlet>
+    <servlet-name>SystemServiceServlet</servlet-name>
+    <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+    <init-param>
+      <param-name>services</param-name>
+      <param-value>endPoint.TopicEntityEndpoint,endPoint.UserEntityEndpoint,endPoint.TopicEndpoint</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SystemServiceServlet</servlet-name>
+    <url-pattern>/_ah/spi/*</url-pattern>
+  </servlet-mapping>
+	
+	
+	
+	
   <servlet>
 	    <servlet-name>AuthentificationServlet</servlet-name>
 	    <servlet-class>service.AuthentificationServlet</servlet-class> 
@@ -40,7 +58,8 @@
         <url-pattern>/top10</url-pattern>
   </servlet-mapping>
   
-      <servlet>
+  
+  <servlet>
 	    <servlet-name>UpvoteServlet</servlet-name>
 	    <servlet-class>service.UpvoteServlet</servlet-class> 
   </servlet>
@@ -48,19 +67,15 @@
         <servlet-name>UpvoteServlet</servlet-name>
         <url-pattern>/upvote</url-pattern>
   </servlet-mapping>
-	
+  
   <servlet>
-    <servlet-name>SystemServiceServlet</servlet-name>
-    <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
-    <init-param>
-      <param-name>services</param-name>
-      <param-value>endPoint.TopicEntityEndpoint,endPoint.UserEntityEndpoint</param-value>
-    </init-param>
+	    <servlet-name>GetVotedTopicsServlet</servlet-name>
+	    <servlet-class>service.GetVotedTopicsServlet</servlet-class> 
   </servlet>
-
   <servlet-mapping>
-    <servlet-name>SystemServiceServlet</servlet-name>
-    <url-pattern>/_ah/spi/*</url-pattern>
+        <servlet-name>GetVotedTopicsServlet</servlet-name>
+        <url-pattern>/getvotes</url-pattern>
   </servlet-mapping>
-
+  
+	
 </web-app>

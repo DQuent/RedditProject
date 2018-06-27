@@ -14,6 +14,7 @@ import com.google.appengine.api.datastore.Entity;
 
 import entity.UserEntity;
 
+@SuppressWarnings("serial")
 public class UsersGenerationServlet  extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
